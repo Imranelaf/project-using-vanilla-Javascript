@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher or Lower game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="second">
+        <h1>Guess The Number</h1>
+        <h4 id="dd"></h4>
+        <p id="msg" class="message"></p>
+        <input type="text" class="inpt" id="inpt" placeholder="Enter the number">
+        <button class="btn" id="btn">Try</button>
+    </div>
+
+    <div class="numberUsed">Number Used:</div>
+    <div class="tries" >Tries: <p id="counting"></p></div>
+    <div id="first">
+        <div class="level container">
+            <h2>Choose your level</h2>
+            <button class="btn" value="1">Easy</button>
+            <button class="btn" value="2">Medium</button>
+            <button class="btn" value="3">Difficult</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
