@@ -5,13 +5,13 @@
 }
 
 body{
-    background-color: rgb(247, 74, 43);
+    background-color: #9ead9c;
     overflow: hidden;
 }
 
 .container{
     position: absolute;
-    color: aliceblue;
+    color: #741244;
     height: 300px;
     width: 500px;
     justify-items: center;
@@ -34,8 +34,8 @@ body{
 
 }
 .btn{
-    color: tomato;
-    background-color: antiquewhite;
+    color: #741244;
+    background-color: #6ead7a;
     height: 40px;
     width:150px;
     border-style: none;
@@ -48,7 +48,7 @@ body{
 
 .btn:hover{
     width: 200px;
-    background-color: rgb(248, 198, 190);
+    background-color: #6ead7a;
     
 }
 
@@ -58,7 +58,6 @@ body{
 }
 
 .tries{
-    color: antiquewhite;
     margin: 40px;
 }
 .level{
