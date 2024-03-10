@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    background-color: azure;
+    
+
+    
+}
+
+.poke{
+    height: 120px;
+    width: 120px;
+    background-size:contain;
+    background-repeat: no-repeat;
+    margin: 12px;
+}
+
+.text{
+    display:flex;
+    text-align: center;
+    flex-direction: column;
+    padding-top: 80px;
+
+}
+
+.score{
+    margin-left: 50px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    place-items: center;
+    padding: 20px; 
+}
+.hint{
+    background-color:greenyellow;
+    height: 60px;
+    width: 120px;
+    border-radius: 5px;
+}
+.pass{
+    background-color:orangered;
+    height: 60px;
+    width: 120px;
+    border-radius: 5px;
+}
+
+.help{
+    display:flex;
+    justify-content: center;
+  
+    
+}
