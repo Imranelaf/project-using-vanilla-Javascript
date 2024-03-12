@@ -2,11 +2,12 @@ const image = document.getElementById("poke");
 const value = document.getElementById("answer");
 const answerReact = document.getElementById("reacting");
 let score = 0;
-
+let repeatPokemon = [];
 //choose a random pokemon from the pokemonj api
 async function pokemon() {
-    const random = Math.floor(Math.random() * 20) + 1;
-    const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${random}`);
+    const randNum = random();
+    console.log(repeatPokemon);
+    const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${randNum}`);
     const pok = await data.json();
     const result = pok.forms[0].name;
     const img = pok.sprites.other.showdown.front_default;
@@ -19,15 +20,31 @@ function addimage(pic) {
     image.style.backgroundImage = `url(${pic})`;
 }
 
+function random(){
+    let randomNum;
+    do {
+        randomNum = Math.floor(Math.random() * 500) + 1;
+    } while (repeatPokemon.includes(randomNum));
+    repeatPokemon.push(randomNum);
+    if(repeatPokemon.length == 150){
+        repeatPokemon = [];
+    }
+    return randomNum;
+}
+
 //waiting user to enter his answer by pressing enter
 async function answer() {
     return new Promise(resolve => {
+        try{
         value.addEventListener('keydown', function(event) {
             if (event.key === 'Enter') {
                 const response = value.value;
                 resolve(response);
             }
-        });
+        });}catch(err){
+            console.log(message.err);
+
+        }
     });
 }
 //change the background color based on the answer 
@@ -42,7 +59,7 @@ async function start() {
     let playerAnswer = await answer();
 
     if (pokemonName === playerAnswer) {
-        console.log("correct");
+        score =+1;
         reactToAnswer("green");
         i=1;
     } else {
@@ -59,9 +76,4 @@ async function start() {
     }while(i==0);
     start(); // Start a new round
 }
-
-function hint(){
-
-}
-
 start();
